@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuộc thi bình chọn người đẹp nhất hành tinh</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<style>
+		.container {
+			margin-top: 50px;
+			text-align: center;
+		}
+    
+
+		img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			margin: 10px;
+			border: 1px solid black;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		img:hover {
+			box-shadow: 0 0 10px rgba(142, 144, 111, 0.5);
+			transform: scale(1.1);
+		}
+    body {
+  background-image: url("https://png.pngtree.com/background/20220714/original/pngtree-spring-white-flowers-sunshine-leaves-fresh-background-picture-image_1621154.jpg");
+   background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; /* set height to 100% of viewport height */
+}
+	</style>
+</head>
+<body>
+  <audio src="image/SuytNuaThi.mp3" autoplay></audio>
+
+	<div class="container">
+		<h1>Ai là hoa hậu ?</h1>
+		<p id="p">Xin mời lựa chọn</p>
+		<div class="row">
+			<div class="col-md-4">
+				<img src="image/1.jpg" data-number="1">
+			</div>
+			<div class="col-md-4">
+				<img src="image/2.jpg" data-number="2">
+			</div>
+			<div class="col-md-4">
+				<img src="image/5.jpg" data-number="3">
+			</div>
+			<div class="col-md-4">
+				<img src="image/4.jpg" data-number="4">
+			</div>
+			<div class="col-md-4">
+				<img src="image/3.jpg" data-number="3">
+
+			</div>
+			<div class="col-md-4">s
+				<img src="image/7.jpg" data-number="6">
+			</div>
+      <div class="col-md-4">
+				<img src="image/8.jpg" data-number="4">
+			</div>
+			<div class="col-md-4">
+				<img src="image/9.jpg" data-number="5">
+			</div>
+			<div class="col-md-4">
+				<img src="image/10.jpg" data-number="6">
+			</div>
+		</div>
+	</div>
+
+	<script>
+	$(document).ready(function() {
+    var correctNumber = 3;
+    var audio = new Audio('image/SuytNuaThi.mp3');
+
+    $('img').click(function() {
+        var selectedNumber = $(this).data('number');
+
+        if (selectedNumber == correctNumber) {
+            Swal.fire({
+                title: 'Xinhhh đẹp đáng iu  thì chỉ có em thôi <3',
+                icon: 'success',
+                timer: 5000,
+                timerProgressBar: true
+                
+            });
+			setTimeout(function() {
+            window.location.href = "https://www.instagram.com/hau.hx/";
+        }, 5000);
+        } else {
+            Swal.fire({
+                title: 'Sai rồi!',
+                text: 'Hãy thử lại.',
+                icon: 'error'
+                
+            });
+        }
+      
+        // Play the audio file
+      //  audio.play();
+    });
+});
+	</script>
+</body>
+</html>
